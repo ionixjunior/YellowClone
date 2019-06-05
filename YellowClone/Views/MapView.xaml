@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+    xmlns:controls="clr-namespace:YellowClone.Controls"
+    x:Class="YellowClone.Views.MapView"
+>
+    <ContentPage.Content>
+        <Grid
+            RowSpacing="0"
+        >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="{OnPlatform Android=100, iOS=110}" />
+            </Grid.RowDefinitions>
+            
+            <maps:Map 
+                Grid.Row="0"
+            />
+            
+            <FlexLayout
+                Grid.Row="1"
+                Direction="Row"
+                AlignItems="Center"
+            >
+                <ImageButton 
+                    Style="{StaticResource RoundedLightButton}"
+                    Source="map_menu.png"
+                    Clicked="OnMenuClick"
+                />
+                
+                <Button 
+                    Style="{StaticResource YellowButton}"
+                    Text="SCAN"
+                    Image="map_scan.png"
+                    FlexLayout.Grow="1"
+                />
+                
+                <ImageButton 
+                    Style="{StaticResource RoundedLightButton}"
+                    Source="map_help.png"
+                />
+            </FlexLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

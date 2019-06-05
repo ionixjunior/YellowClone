@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="YellowClone.Views.MenuView"
+    x:Name="view"
+>
+    <ContentPage.Content>
+        <Grid
+            RowSpacing="0"
+        >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{OnPlatform Android=130, iOS=200}" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            
+            <FlexLayout
+                Grid.Row="0"
+                Direction="Row"
+                AlignItems="Center"
+                Padding="{OnPlatform Android='20,0', iOS='20,40,20,0'}"
+            >
+                <Frame
+                    HeightRequest="{OnPlatform Android=80, iOS=100}"
+                    WidthRequest="{OnPlatform Android=80, iOS=100}"
+                    Padding="0"
+                    CornerRadius="{OnPlatform Android=40, iOS=50}"
+                    IsClippedToBounds="true"
+                    
+                >
+                    <Image 
+                        Source="{Binding Account.Photo}"
+                    />
+                </Frame>
+                
+                <StackLayout
+                    Spacing="0"
+                    Padding="10,0,0,0"
+                >
+                    <Label 
+                        Text="{Binding Account.Name}"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                    />
+                    
+                    <Label 
+                        Text="{Binding Account.Email}"
+                        TextColor="Gray"
+                        FontSize="Small"
+                    />
+                </StackLayout>
+            </FlexLayout>
+            
+            <StackLayout
+                Grid.Row="1"
+                BindableLayout.ItemsSource="{Binding Menus}"
+            >
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <FlexLayout
+                            HeightRequest="{OnPlatform Android=50, iOS=70}"
+                            AlignItems="Center"
+                            Padding="25,0"
+                        >
+                            <FlexLayout.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Command="{Binding Source={x:Reference view}, Path=BindingContext.NavigateToCommand}"
+                                    CommandParameter="{Binding Type}"
+                                />
+                            </FlexLayout.GestureRecognizers>
+                            
+                            <Image 
+                                Source="{Binding Icon}"
+                                HeightRequest="{OnPlatform Android=30, iOS=40}"
+                            />
+                            
+                            <Label 
+                                Text="{Binding Name}"
+                                Margin="10,0,0,0"
+                            />
+                        </FlexLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+            
+            <Frame
+                Grid.Row="1"
+                BackgroundColor="{StaticResource MainColor}"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                Padding="0"
+                CornerRadius="10"
+                HasShadow="false"
+                Margin="{OnPlatform Android='0,10,25,0', iOS='0,22,25,0'}"
+            >
+                <Label 
+                    Text="{Binding Wallet.Total, StringFormat='{0:C2}'}"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    Margin="10,0"
+                />
+            </Frame>
+            
+            <Label
+                Grid.Row="2"
+                Text="1.11.0(1)"
+                HorizontalTextAlignment="End"
+                Margin="0,0,20,0"
+            />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

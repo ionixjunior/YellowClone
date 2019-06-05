@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="YellowClone.Views.Wallet.MyWalletView"
+    Title="My Wallet"
+>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FrameOptions" TargetType="Frame">
+                <Setter Property="Margin" Value="10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout
+            Padding="25"
+            Spacing="30"
+        >
+            <Frame
+                BackgroundColor="{StaticResource MainColor}"
+                HeightRequest="{OnPlatform Android=190, iOS=220}"
+                Padding="0"
+                HasShadow="false"
+                CornerRadius="10"
+            >
+                <Grid>
+                    <Image 
+                        Source="wallet_background_wallet.png"
+                    />
+                    
+                    <FlexLayout
+                        Direction="Row"
+                        Padding="20"
+                        AlignItems="Stretch"
+                    >
+                        <Label 
+                            Text="Current Balance"
+                            FlexLayout.Grow="1"
+                            FontSize="26"
+                            VerticalTextAlignment="Center"
+                        />
+                        
+                        <FlexLayout
+                            FlexLayout.Grow="1"
+                            Direction="Column"
+                            AlignItems="End"
+                            JustifyContent="Center"
+                        >
+                            <Label 
+                                Text="R$ 3,00"
+                                FontSize="30"
+                            />
+                            
+                            <Button 
+                                Style="{StaticResource WhiteButtonSmall}"
+                                Text="ADD"
+                            />
+                        </FlexLayout>
+                    </FlexLayout>
+                </Grid>
+            </Frame>
+            
+            <Label
+                Text="Use cash balance to:"
+                FontAttributes="Bold"
+                FontSize="Medium"
+            />
+            
+            <ScrollView
+                Orientation="Horizontal"    
+            >
+                <FlexLayout
+                    Direction="Row"
+                >
+                    <Frame
+                        Style="{StaticResource FrameOptions}"
+                        Padding="0"
+                        HeightRequest="{OnPlatform Android=120, iOS=140}"
+                        WidthRequest="{OnPlatform Android=120, iOS=140}"
+                    >
+                        <StackLayout
+                            Spacing="0"
+                            VerticalOptions="Center"
+                        >
+                            <Image 
+                                Source="wallet_transfer.png"
+                            />
+                            
+                            <Label 
+                                Text="Transfer to friends"
+                                FontSize="Small"
+                                HorizontalTextAlignment="Center"
+                                Margin="10,0"
+                            />
+                        </StackLayout>
+                    </Frame>
+                    
+                    <Frame
+                        Style="{StaticResource FrameOptions}"
+                        Padding="0"
+                        HeightRequest="{OnPlatform Android=120, iOS=140}"
+                        WidthRequest="{OnPlatform Android=120, iOS=140}"
+                    >
+                        <StackLayout
+                            Spacing="0"
+                            VerticalOptions="Center"
+                        >
+                            <Image 
+                                Source="wallet_barcode.png"
+                            />
+                            
+                            <Label 
+                                Text="Pay bill"
+                                FontSize="Small"
+                                HorizontalTextAlignment="Center"
+                                Margin="10,0"
+                            />
+                        </StackLayout>
+                    </Frame>
+                    
+                    <Frame
+                        Style="{StaticResource FrameOptions}"
+                        Padding="0"
+                        HeightRequest="{OnPlatform Android=120, iOS=140}"
+                        WidthRequest="{OnPlatform Android=120, iOS=140}"
+                    >
+                        <StackLayout
+                            Spacing="0"
+                            VerticalOptions="Center"
+                        >
+                            <Image 
+                                Source="wallet_smartphone.png"
+                            />
+                            
+                            <Label 
+                                Text="Cell phone top up"
+                                FontSize="Small"
+                                HorizontalTextAlignment="Center"
+                                Margin="10,0"
+                            />
+                        </StackLayout>
+                    </Frame>
+                </FlexLayout>
+            </ScrollView>
+            
+            <FlexLayout
+                Direction="Row"
+                AlignItems="Center"
+            >
+                <Image 
+                    Source="wallet_history.png"
+                />
+                
+                <Label 
+                    Text="View Usage History"
+                    Margin="10,0,0,0"
+                />
+            </FlexLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:YellowClone.Controls"
+    x:Class="YellowClone.Views.Trips.MyTripsView"
+    Title="My Trips"
+>   
+    <ContentPage.Content>
+        <controls:ListView 
+            ItemsSource="{Binding Trips}"
+            HasUnevenRows="true"
+            Footer=""
+            ItemTappedCommand="{Binding GoToDetailsCommand}"
+        >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid
+                                HeightRequest="110"
+                                RowSpacing="0"
+                                Margin="20,10"
+                            >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                
+                                <StackLayout
+                                    Grid.Row="0"
+                                    Spacing="0"
+                                    VerticalOptions="Center"
+                                >
+                                    <Label 
+                                        Text="{Binding Name}"
+                                        FontAttributes="Bold"
+                                    />
+                                    
+                                    <Label 
+                                        Text="{Binding CreatedAt, StringFormat='{0:dddd} at {0:hh:mm}'}"
+                                        TextColor="Gray"
+                                    />
+                                </StackLayout>
+                                
+                                <FlexLayout
+                                    Grid.Row="1"
+                                    Direction="Row"
+                                    AlignItems="Center"
+                                >
+                                    <StackLayout
+                                        Spacing="0"
+                                        FlexLayout.Grow="1"
+                                    >
+                                        <Label 
+                                            Text="Distance"
+                                            TextColor="Gray"
+                                        />
+                                        
+                                        <Label 
+                                            Text="{Binding Distance}"
+                                            FontAttributes="Bold"
+                                        />
+                                    </StackLayout>
+                                    
+                                    <StackLayout
+                                        Spacing="0"
+                                        FlexLayout.Grow="1"
+                                    >
+                                        <Label 
+                                            Text="Time"
+                                            TextColor="Gray"
+                                        />
+                                        
+                                        <Label 
+                                            Text="{Binding Duration}"
+                                            FontAttributes="Bold"
+                                        />
+                                    </StackLayout>
+                                    
+                                    <StackLayout
+                                        Spacing="0"
+                                        FlexLayout.Grow="2"
+                                    >
+                                        <Label 
+                                            Text="Cost"
+                                            TextColor="Gray"
+                                            HorizontalTextAlignment="End"
+                                        />
+                                        
+                                        <Label 
+                                            Text="{Binding Cost, StringFormat='{0:C2}'}"
+                                            FontAttributes="Bold"
+                                            HorizontalTextAlignment="End"
+                                        />
+                                    </StackLayout>
+                                </FlexLayout>
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </controls:ListView>
+    </ContentPage.Content>
+</ContentPage>
