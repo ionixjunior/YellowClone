@@ -24,9 +24,6 @@ namespace YellowClone.Droid
             Xamarin.FormsMaps.Init(this, savedInstanceState);
 
             var xfApplication = new App();
-#if DEBUG
-            Xamarin.Forms.HotReloader.Current.Start(xfApplication, 4290);
-#endif
             LoadApplication(xfApplication);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

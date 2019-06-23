@@ -26,9 +26,6 @@ namespace YellowClone.iOS
             Xamarin.FormsMaps.Init();
 
             var xfApplication = new App();
-#if DEBUG
-            Xamarin.Forms.HotReloader.Current.Start(xfApplication, 4291);
-#endif
             LoadApplication(xfApplication);
 
             return base.FinishedLaunching(app, options);
