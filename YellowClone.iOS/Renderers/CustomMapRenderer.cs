@@ -62,10 +62,10 @@ namespace YellowClone.iOS.Renderers
                 return null;
             }
 
-            annotationView = mapView.DequeueReusableAnnotation(customPin.Id.ToString());
+            annotationView = mapView.DequeueReusableAnnotation(customPin.MarkerId.ToString());
             if (annotationView == null)
             {
-                annotationView = new CustomMKAnnotationView(annotation, customPin.Id.ToString());
+                annotationView = new CustomMKAnnotationView(annotation, customPin.MarkerId.ToString());
                 annotationView.Image = UIImage.FromFile("map_pin.png");
                 annotationView.CalloutOffset = new CGPoint(0, 0);
                 ((CustomMKAnnotationView)annotationView).Id = customPin.Identifier.ToString();
