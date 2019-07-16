@@ -1,10 +1,124 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="YellowClone.Views.HelpCenter.HelpCenterView"
     Title="Help Center"
 >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame">
+                <Setter Property="WidthRequest" Value="{OnPlatform Android=120, iOS=150}" />
+                <Setter Property="HeightRequest" Value="{OnPlatform Android=150, iOS=180}" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HasShadow" Value="false" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="FlexLayout.Basis" Value="50%" />
+                <Setter Property="Margin" Value="15" />
+                <Setter Property="BackgroundColor" Value="#eeeeee" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                Padding="40"
+            >
+                <Label 
+                    Text="Help Center"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                />
+                
+                <FlexLayout
+                    Direction="Row"
+                    AlignItems="Center"
+                >
+                    <Image 
+                        Source="help_center_route.png"
+                    />
+                    
+                    <Label 
+                        Text="SÃO PAULO"
+                        Margin="10,0,0,0"
+                    />
+                </FlexLayout>
+                
+                <FlexLayout
+                    Direction="Row"
+                    Wrap="Wrap"
+                    VerticalOptions="StartAndExpand"
+                >
+                    <Frame>
+                        <StackLayout
+                            VerticalOptions="Center"
+                            Spacing="0"
+                        >
+                            <Image 
+                                Source="help_center_wallet.png"
+                            />
+                            
+                            <Label 
+                                Text="Wallet"
+                                HorizontalTextAlignment="Center"
+                            />
+                        </StackLayout>
+                    </Frame>
+                    
+                    <Frame>
+                        <StackLayout
+                            VerticalOptions="Center"
+                            Spacing="0"
+                        >
+                            <Image 
+                                Source="help_center_scooter.png"
+                            />
+                            
+                            <Label 
+                                Text="Scooter"
+                                HorizontalTextAlignment="Center"
+                            />
+                        </StackLayout>
+                    </Frame>
+                    
+                    <Frame>
+                        <StackLayout
+                            VerticalOptions="Center"
+                            Spacing="0"
+                        >
+                            <Image 
+                                Source="help_center_e_bike.png"
+                            />
+                            
+                            <Label 
+                                Text="e-Bike"
+                                HorizontalTextAlignment="Center"
+                            />
+                        </StackLayout>
+                    </Frame>
+                    
+                    <Frame>
+                        <StackLayout
+                            VerticalOptions="Center"
+                            Spacing="0"
+                        >
+                            <Image 
+                                Source="help_center_bike.png"
+                            />
+                            
+                            <Label 
+                                Text="Bike"
+                                HorizontalTextAlignment="Center"
+                            />
+                        </StackLayout>
+                    </Frame>
+                </FlexLayout>
+                
+                <Button 
+                    Style="{StaticResource WhiteButton}"
+                    Text="REPORT ISSUE"
+                />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

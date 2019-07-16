@@ -1,9 +1,199 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:YellowClone.Controls"
     x:Class="YellowClone.Views.Trips.TripDetailView"
+    NavigationPage.HasNavigationBar="false"
 >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="#ececec" />
+                <Setter Property="HeightRequest" Value="1" />
+                <Setter Property="Margin" Value="0,15" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
     <ContentPage.Content>
+        <ScrollView>
+            <FlexLayout
+                Direction="Column"
+                Padding="20,0"
+            >
+                <Grid
+                    HeightRequest="{OnPlatform Android=250, iOS=300}"
+                    Padding="-20,0"
+                >
+                    <Image 
+                        Source="trip_directions.png"
+                        Aspect="AspectFill"
+                    />
+                    
+                    <ImageButton
+                        Style="{StaticResource RoundedLightButton}"
+                        Source="trip_close.png"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start"
+                        Margin="{OnPlatform Android='0,20,20,0', iOS='0,55,20,0'}"
+                        Clicked="OnGoBackClick"
+                    />
+                </Grid>
+                
+                <Image 
+                    Source="trip_bike.png"
+                    Margin="0,-60,0,0"
+                />
+                
+                <Label 
+                    Text="Bike Trip ended"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    FontSize="Large"
+                    Margin="0,10,0,0"
+                />
+                
+                <Label 
+                    Text="{Binding Trip.CreatedAt, StringFormat='{0:dddd} at {0:hh:mm}'}"
+                    TextColor="Gray"
+                    HorizontalTextAlignment="Center"
+                    Margin="0,5,0,0"
+                />
+                
+                <BoxView />
+                
+                <FlexLayout
+                    Direction="Row"
+                    HeightRequest="50"
+                    AlignItems="Center"
+                    JustifyContent="SpaceBetween"
+                >
+                    <Label 
+                        Text="Amount Charged"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                    />
+                    
+                    <Label 
+                        Text="{Binding Trip.Cost, StringFormat='{0:C2}'}"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                    />
+                </FlexLayout>
+                
+                <BoxView />
+                
+                <FlexLayout
+                    Direction="Row"
+                    HeightRequest="100"
+                    AlignItems="Center"
+                    JustifyContent="SpaceBetween"
+                >
+                    <StackLayout>
+                        <Image 
+                            Source="trip_time.png"
+                        />
+                        
+                        <Label 
+                            Text="{Binding Trip.Duration}"
+                            FontAttributes="Bold"
+                            FontSize="Large"
+                            HorizontalTextAlignment="Center"
+                            LineBreakMode="TailTruncation"
+                        />
+                        
+                        <Label 
+                            Text="time"
+                            TextColor="Gray"
+                            HorizontalTextAlignment="Center"
+                        />
+                    </StackLayout>
+                    
+                    <StackLayout>
+                        <Image 
+                            Source="trip_route.png"
+                        />
+                        
+                        <Label 
+                            Text="{Binding Trip.Distance}"
+                            FontAttributes="Bold"
+                            FontSize="Large"
+                            HorizontalTextAlignment="Center"
+                            LineBreakMode="TailTruncation"
+                        />
+                        
+                        <Label 
+                            Text="distance"
+                            TextColor="Gray"
+                            HorizontalTextAlignment="Center"
+                        />
+                    </StackLayout>
+                    
+                    <StackLayout>
+                        <Image 
+                            Source="trip_calories.png"
+                        />
+                        
+                        <Label 
+                            Text="{Binding Trip.Calories}"
+                            FontAttributes="Bold"
+                            FontSize="Large"
+                            HorizontalTextAlignment="Center"
+                            LineBreakMode="TailTruncation"
+                        />
+                        
+                        <Label 
+                            Text="calories"
+                            TextColor="Gray"
+                            HorizontalTextAlignment="Center"
+                        />
+                    </StackLayout>
+                    
+                    <StackLayout>
+                        <Image 
+                            Source="trip_cloud.png"
+                        />
+                        
+                        <Label 
+                            Text="{Binding Trip.Co2, StringFormat='{0}kg'}"
+                            FontAttributes="Bold"
+                            FontSize="Large"
+                            HorizontalTextAlignment="Center"
+                            LineBreakMode="TailTruncation"
+                        />
+                        
+                        <Label 
+                            Text="CO2"
+                            TextColor="Gray"
+                            HorizontalTextAlignment="Center"
+                        />
+                    </StackLayout>
+                </FlexLayout>
+                
+                <BoxView />
+                
+                <FlexLayout
+                    Direction="Row"
+                    HeightRequest="80"
+                    JustifyContent="SpaceBetween"
+                >
+                    <controls:CustomButton 
+                        Text="Report Issue"
+                        Padding="25,0"
+                        Style="{StaticResource CleanButton}"
+                        FontSize="{OnPlatform Android=Default, iOS=Medium}"
+                    />
+                    
+                    <controls:CustomButton 
+                        Text="Share your Trip"
+                        Padding="25,0"
+                        Style="{StaticResource CleanButton}"
+                        FontSize="{OnPlatform Android=Default, iOS=Medium}"
+                    />
+                </FlexLayout>
+            </FlexLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
