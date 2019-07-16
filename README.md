@@ -25,3 +25,11 @@ Alguns prints do app:
 #### My Trips
 
 <img src="art/trip_android.png" height="500" /> <img src="art/trip_ios.png" height="500" />
+
+#### Trip details
+
+<img src="art/trip_details_android.png" height="500" /> <img src="art/trip_details_ios.png" height="500" />
+
+#### Help Center
+
+<img src="art/help_center_android.png" height="500" /> <img src="art/help_center_ios.png" height="500" />
