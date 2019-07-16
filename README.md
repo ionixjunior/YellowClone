@@ -2,7 +2,11 @@
 
 App feito com Xamarin.Forms para a talk "**O Poder do XAML, criando interfaces incríveis!**". 
 
-Link da live - Parte I https://www.youtube.com/watch?v=x_sNPEwS3kA
+#### Links da live
+
+Parte I https://www.youtube.com/watch?v=x_sNPEwS3kA
+
+Parte II https://www.youtube.com/watch?v=k3oediCzZvs
 
 Alguns prints do app:
 
