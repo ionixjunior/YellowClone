@@ -1,11 +1,11 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
-using Xamarin.Forms.Maps;
+//using Xamarin.Forms.Maps;
 using System;
 
 namespace YellowClone.Controls
 {
-    public class CustomMap : Map
+    public class CustomMap// : Map
     {
         public event EventHandler<CustomPin> PinSelected;
         public event EventHandler MapMoved;
@@ -18,7 +18,7 @@ namespace YellowClone.Controls
 
         public void AddPin(CustomPin pin)
         {
-            Pins.Add(pin);
+            //Pins.Add(pin);
             CustomPins.Add(pin);
         }
 
@@ -33,7 +33,7 @@ namespace YellowClone.Controls
         }
     }
 
-    public class CustomPin : Pin
+    public class CustomPin// : Pin
     {
         public int Identifier { get; set; }
         public string Information { get; set; }
