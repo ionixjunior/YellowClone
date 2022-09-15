@@ -33,7 +33,7 @@
                 <Button 
                     Style="{StaticResource YellowButton}"
                     Text="SCAN"
-                    Image="map_scan.png"
+                    ImageSource="map_scan.png"
                     FlexLayout.Grow="1"
                 />
                 
