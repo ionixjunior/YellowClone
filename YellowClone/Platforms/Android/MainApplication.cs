@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace Exemplo;
+namespace YellowClone;
 
 [Application]
 public class MainApplication : MauiApplication

@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace Exemplo;
+namespace YellowClone;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

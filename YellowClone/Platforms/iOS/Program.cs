@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace Exemplo;
+namespace YellowClone;
 
 public class Program
 {
