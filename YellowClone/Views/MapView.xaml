@@ -2,7 +2,6 @@
 <ContentPage 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     xmlns:controls="clr-namespace:YellowClone.Controls"
     x:Class="YellowClone.Views.MapView"
 >
@@ -14,10 +13,11 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="{OnPlatform Android=100, iOS=110}" />
             </Grid.RowDefinitions>
-            
+            <!--
             <maps:Map 
                 Grid.Row="0"
             />
+            -->
             
             <FlexLayout
                 Grid.Row="1"
