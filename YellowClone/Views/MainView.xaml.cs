@@ -2,7 +2,7 @@
 
 namespace YellowClone.Views
 {
-    public partial class MainView : MasterDetailPage
+    public partial class MainView : FlyoutPage
     {
         public MainView()
         {

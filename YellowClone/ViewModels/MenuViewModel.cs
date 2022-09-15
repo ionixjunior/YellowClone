@@ -102,7 +102,7 @@ namespace YellowClone.ViewModels
             System.Diagnostics.Debug.WriteLine(type);
 
             var mainPage = Application.Current.MainPage as NavigationPage;
-            var masterDetail = mainPage.Navigation.NavigationStack.FirstOrDefault() as MasterDetailPage;
+            var masterDetail = mainPage.Navigation.NavigationStack.FirstOrDefault() as FlyoutPage;
             masterDetail.IsPresented = false;
 
             switch (type)

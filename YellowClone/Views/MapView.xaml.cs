@@ -14,7 +14,7 @@ namespace YellowClone.Views
         private const string PinDescriptionElement = "pinDescription";
         private const string PinContentElement = "pinContent";
 
-        private MasterDetailPage _masterDetail;
+        private FlyoutPage _masterDetail;
 
         public MapView()
         {
@@ -104,7 +104,7 @@ namespace YellowClone.Views
             if (_masterDetail == null)
             {
                 var mainPage = Application.Current.MainPage as NavigationPage;
-                _masterDetail = mainPage.Navigation.NavigationStack.FirstOrDefault() as MasterDetailPage;
+                _masterDetail = mainPage.Navigation.NavigationStack.FirstOrDefault() as FlyoutPage;
             }
         }
 
