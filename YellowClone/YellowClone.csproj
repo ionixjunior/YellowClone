@@ -1,15 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <ProduceAssemblyReference>true</ProduceAssemblyReference>
+    <TargetFrameworks>net6.0-android;net6.0-ios</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>YellowClone</RootNamespace>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationTitle>Yellow</ApplicationTitle>
+    <ApplicationId>br.com.ionixjunior.YellowClone</ApplicationId>
+    <ApplicationIdGuid>211396E7-F434-4311-86F1-3AE5142EFF09</ApplicationIdGuid>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+	<ApplicationVersion>1</ApplicationVersion>
+
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">10.0</SupportedOSPlatformVersion>
+	<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>pdbonly</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
-
+  <!--
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
@@ -18,18 +26,13 @@
     <PackageReference Include="Refit" Version="4.7.9" />
     <PackageReference Include="Xamarin.HotReload" Version="1.4.12" />
   </ItemGroup>
+  -->
+
   <ItemGroup>
-    <Folder Include="Views\" />
-    <Folder Include="Models\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Enums\" />
-    <Folder Include="Views\Wallet\" />
-    <Folder Include="Views\Trips\" />
-    <Folder Include="Controls\" />
-    <Folder Include="Views\Terms\" />
-    <Folder Include="Views\HelpCenter\" />
-    <Folder Include="Views\Promotion\" />
+    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+    <MauiImage Include="Resources\Images\*" />
+    <MauiFont Include="Resources\Fonts\*" />
+    <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
 </Project>
