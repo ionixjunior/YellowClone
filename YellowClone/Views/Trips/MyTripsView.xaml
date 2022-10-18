@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
@@ -27,7 +27,7 @@
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
                                 
-                                <StackLayout
+                                <VerticalStackLayout
                                     Grid.Row="0"
                                     Spacing="0"
                                     VerticalOptions="Center"
@@ -41,14 +41,14 @@
                                         Text="{Binding CreatedAt, StringFormat='{0:dddd} at {0:hh:mm}'}"
                                         TextColor="Gray"
                                     />
-                                </StackLayout>
+                                </VerticalStackLayout>
                                 
                                 <FlexLayout
                                     Grid.Row="1"
                                     Direction="Row"
                                     AlignItems="Center"
                                 >
-                                    <StackLayout
+                                    <VerticalStackLayout
                                         Spacing="0"
                                         FlexLayout.Grow="1"
                                     >
@@ -61,9 +61,9 @@
                                             Text="{Binding Distance}"
                                             FontAttributes="Bold"
                                         />
-                                    </StackLayout>
+                                    </VerticalStackLayout>
                                     
-                                    <StackLayout
+                                    <VerticalStackLayout
                                         Spacing="0"
                                         FlexLayout.Grow="1"
                                     >
@@ -76,9 +76,9 @@
                                             Text="{Binding Duration}"
                                             FontAttributes="Bold"
                                         />
-                                    </StackLayout>
+                                    </VerticalStackLayout>
                                     
-                                    <StackLayout
+                                    <VerticalStackLayout
                                         Spacing="0"
                                         FlexLayout.Grow="2"
                                     >
@@ -93,7 +93,7 @@
                                             FontAttributes="Bold"
                                             HorizontalTextAlignment="End"
                                         />
-                                    </StackLayout>
+                                    </VerticalStackLayout>
                                 </FlexLayout>
                             </Grid>
                         </ViewCell.View>
