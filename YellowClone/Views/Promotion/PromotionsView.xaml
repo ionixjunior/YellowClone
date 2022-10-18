@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="YellowClone.Views.Promotion.PromotionsView"
+    BackgroundColor="#f5f5f5"
     Title="Promotions"
 >
     <ContentPage.Content>
         <FlexLayout
             Direction="Column"
-            BackgroundColor="#f5f5f5"
-            Padding="40"
+            Margin="40"
         >
             <Image 
                 Source="promotion.png"
