@@ -4,6 +4,49 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
+    <Style x:Key="YellowButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource MainColor}" />
+        <Setter Property="TextColor" Value="{StaticResource DarkColor}" />
+        <Setter Property="ContentLayout" Value="Left, 10" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="CornerRadius" Value="30" />
+    </Style>
+        
+    <Style x:Key="WhiteButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="CornerRadius" Value="30" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="BorderColor" Value="Black" />
+        <Setter Property="BorderWidth" Value="2" />
+    </Style>
+        
+    <Style x:Key="WhiteButtonSmall" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="HeightRequest" Value="36" />
+        <Setter Property="CornerRadius" Value="18" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="WidthRequest" Value="80" />
+    </Style>
+        
+    <Style x:Key="RoundedLightButton" TargetType="ImageButton">
+        <Setter Property="BorderColor" Value="#d5d5d5" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="CornerRadius" Value="30" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="60" />
+        <Setter Property="Padding" Value="15" />
+        <Setter Property="Margin" Value="20,0" />
+        <Setter Property="BackgroundColor" Value="White" />
+    </Style>
+        
+    <Style x:Key="CleanButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{StaticResource DarkColor}" />
+    </Style>
+    
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
     </Style>
@@ -146,7 +189,7 @@
     </Style>
 
     <Style TargetType="Label">
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
+        <Setter Property="TextColor" Value="Black" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -369,8 +412,8 @@
     </Style>
 
     <Style TargetType="NavigationPage">
-        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray950}}" />
-        <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource White}}" />
+        <Setter Property="BarBackgroundColor" Value="White" />
+        <Setter Property="BarTextColor" Value="Black" />
         <Setter Property="IconColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource White}}" />
     </Style>
 
