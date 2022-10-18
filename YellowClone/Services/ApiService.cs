@@ -15,7 +15,26 @@ namespace YellowClone.Services
 
         private ApiService()
         {
-            _api = RestService.For<IApi>("https://yellow.getsandbox.com");
+            HttpClient client = null;
+
+#if DEBUG
+            client = new HttpClient(GetInsecureHandler());
+#else
+            client = new HttpClient();
+#endif
+
+            client.BaseAddress = new Uri("https://yellow.getsandbox.com");
+            _api = RestService.For<IApi>(client);
+        }
+
+        public HttpClientHandler GetInsecureHandler()
+        {
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
+            {
+                return true;
+            };
+            return handler;
         }
 
         public async Task<Account> GetAccount()
