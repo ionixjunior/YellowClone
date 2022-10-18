@@ -35,7 +35,7 @@
                     />
                 </Frame>
                 
-                <StackLayout
+                <VerticalStackLayout
                     Spacing="0"
                     Padding="10,0,0,0"
                 >
@@ -50,10 +50,10 @@
                         TextColor="Gray"
                         FontSize="Small"
                     />
-                </StackLayout>
+                </VerticalStackLayout>
             </FlexLayout>
             
-            <StackLayout
+            <VerticalStackLayout
                 Grid.Row="1"
                 BindableLayout.ItemsSource="{Binding Menus}"
             >
@@ -83,7 +83,7 @@
                         </FlexLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
-            </StackLayout>
+            </VerticalStackLayout>
             
             <Frame
                 Grid.Row="1"
