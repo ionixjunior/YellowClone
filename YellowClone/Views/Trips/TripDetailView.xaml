@@ -99,7 +99,7 @@
                     AlignItems="Center"
                     JustifyContent="SpaceBetween"
                 >
-                    <StackLayout>
+                    <VerticalStackLayout>
                         <Image 
                             Source="trip_time.png"
                         />
@@ -117,9 +117,9 @@
                             TextColor="Gray"
                             HorizontalTextAlignment="Center"
                         />
-                    </StackLayout>
+                    </VerticalStackLayout>
                     
-                    <StackLayout>
+                    <VerticalStackLayout>
                         <Image 
                             Source="trip_route.png"
                         />
@@ -137,9 +137,9 @@
                             TextColor="Gray"
                             HorizontalTextAlignment="Center"
                         />
-                    </StackLayout>
+                    </VerticalStackLayout>
                     
-                    <StackLayout>
+                    <VerticalStackLayout>
                         <Image 
                             Source="trip_calories.png"
                         />
@@ -157,9 +157,9 @@
                             TextColor="Gray"
                             HorizontalTextAlignment="Center"
                         />
-                    </StackLayout>
+                    </VerticalStackLayout>
                     
-                    <StackLayout>
+                    <VerticalStackLayout>
                         <Image 
                             Source="trip_cloud.png"
                         />
@@ -177,7 +177,7 @@
                             TextColor="Gray"
                             HorizontalTextAlignment="Center"
                         />
-                    </StackLayout>
+                    </VerticalStackLayout>
                 </FlexLayout>
                 
                 <BoxView />

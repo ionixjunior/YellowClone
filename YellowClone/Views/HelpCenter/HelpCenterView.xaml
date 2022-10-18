@@ -47,7 +47,7 @@
                     VerticalOptions="StartAndExpand"
                 >
                     <Frame>
-                        <StackLayout
+                        <VerticalStackLayout
                             VerticalOptions="Center"
                             Spacing="0"
                         >
@@ -59,11 +59,11 @@
                                 Text="Wallet"
                                 HorizontalTextAlignment="Center"
                             />
-                        </StackLayout>
+                        </VerticalStackLayout>
                     </Frame>
                     
                     <Frame>
-                        <StackLayout
+                        <VerticalStackLayout
                             VerticalOptions="Center"
                             Spacing="0"
                         >
@@ -75,11 +75,11 @@
                                 Text="Scooter"
                                 HorizontalTextAlignment="Center"
                             />
-                        </StackLayout>
+                        </VerticalStackLayout>
                     </Frame>
                     
                     <Frame>
-                        <StackLayout
+                        <VerticalStackLayout
                             VerticalOptions="Center"
                             Spacing="0"
                         >
@@ -91,11 +91,11 @@
                                 Text="e-Bike"
                                 HorizontalTextAlignment="Center"
                             />
-                        </StackLayout>
+                        </VerticalStackLayout>
                     </Frame>
                     
                     <Frame>
-                        <StackLayout
+                        <VerticalStackLayout
                             VerticalOptions="Center"
                             Spacing="0"
                         >
@@ -107,7 +107,7 @@
                                 Text="Bike"
                                 HorizontalTextAlignment="Center"
                             />
-                        </StackLayout>
+                        </VerticalStackLayout>
                     </Frame>
                 </FlexLayout>
                 
