@@ -19,27 +19,35 @@
     
     <ContentPage.Content>
         <ScrollView>
-            <FlexLayout
-                Direction="Column"
-                Padding="20,0"
-            >
+            <VerticalStackLayout Padding="20,0">
                 <Grid
                     HeightRequest="{OnPlatform Android=250, iOS=300}"
-                    Padding="-20,0"
                 >
-                    <Image 
+                    <Image
                         Source="trip_directions.png"
                         Aspect="AspectFill"
+                        Margin="-20,0"
                     />
                     
-                    <ImageButton
-                        Style="{StaticResource RoundedLightButton}"
-                        Source="trip_close.png"
+                    <Border
+                        WidthRequest="50"
+                        HeightRequest="50"
+                        Margin="{OnPlatform Android='0,20,20,0', iOS='0,55,20,0'}"
+                        Stroke="#d5d5d5"
                         HorizontalOptions="End"
                         VerticalOptions="Start"
-                        Margin="{OnPlatform Android='0,20,20,0', iOS='0,55,20,0'}"
-                        Clicked="OnGoBackClick"
-                    />
+                        StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="25"/>
+                        </Border.StrokeShape>
+
+                        <ImageButton
+                            BackgroundColor="White"
+                            Margin="15"
+                            Source="trip_close.png"
+                            Clicked="OnGoBackClick"
+                        />
+                    </Border>
                 </Grid>
                 
                 <Image 
@@ -193,7 +201,7 @@
                         FontSize="{OnPlatform Android=Default, iOS=Medium}"
                     />
                 </FlexLayout>
-            </FlexLayout>
+            </VerticalStackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
