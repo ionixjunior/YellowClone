@@ -24,11 +24,23 @@
                 Direction="Row"
                 AlignItems="Center"
             >
-                <ImageButton 
-                    Style="{StaticResource RoundedLightButton}"
-                    Source="map_menu.png"
-                    Clicked="OnMenuClick"
-                />
+                <Border
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    Margin="15,0"
+                    Stroke="#d5d5d5"
+                    StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="30"/>
+                    </Border.StrokeShape>
+
+                    <ImageButton
+                        BackgroundColor="White"
+                        Margin="10"
+                        Source="map_menu.png"
+                        Clicked="OnMenuClick"
+                    />
+                </Border>
                 
                 <Button 
                     Style="{StaticResource YellowButton}"
@@ -37,10 +49,22 @@
                     FlexLayout.Grow="1"
                 />
                 
-                <ImageButton 
-                    Style="{StaticResource RoundedLightButton}"
-                    Source="map_help.png"
-                />
+                <Border
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    Margin="15,0"
+                    Stroke="#d5d5d5"
+                    StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="30"/>
+                    </Border.StrokeShape>
+
+                    <ImageButton
+                        BackgroundColor="White"
+                        Margin="10"
+                        Source="map_help.png"
+                    />
+                </Border>
             </FlexLayout>
         </Grid>
     </ContentPage.Content>
