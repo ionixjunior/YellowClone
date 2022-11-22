@@ -22,6 +22,7 @@
             <Frame
                 x:Name="pinContent"
                 IsVisible="false"
+                Margin="0,-240,0,0"
                 HasShadow="False"
                 CornerRadius="20"
                 WidthRequest="250"
