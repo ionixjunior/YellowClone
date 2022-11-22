@@ -7,6 +7,7 @@ namespace YellowClone
         {
             var builder = MauiApp.CreateBuilder();
             builder
+                .UseMauiMaps()
                 .UseMauiApp<App>();
 
             return builder.Build();

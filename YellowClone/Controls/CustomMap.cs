@@ -1,11 +1,11 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
-//using Xamarin.Forms.Maps;
+using Map = Microsoft.Maui.Controls.Maps.Map;
 using System;
 
 namespace YellowClone.Controls
 {
-    public class CustomMap// : Map
+    public class CustomMap : Map
     {
         public event EventHandler<CustomPin> PinSelected;
         public event EventHandler MapMoved;

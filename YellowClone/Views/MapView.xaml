@@ -13,11 +13,11 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="{OnPlatform Android=100, iOS=110}" />
             </Grid.RowDefinitions>
-            <!--
-            <maps:Map 
+            
+            <controls:CustomMap
+                x:Name="map"
                 Grid.Row="0"
             />
-            -->
             
             <FlexLayout
                 Grid.Row="1"
