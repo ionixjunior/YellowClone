@@ -77,6 +77,16 @@ namespace YellowClone.Views
         {
             if (sender is CustomPin pin)
             {
+                if (GetElementByName<CustomMap>(MapElement) is CustomMap map)
+                {
+                    map.MoveToRegion(
+                        MapSpan.FromCenterAndRadius(
+                            pin.Location,
+                            Distance.FromMeters(200)
+                        )
+                    );
+                }
+
                 if (GetElementByName<Label>(PinNameElement) is Label pinName)
                     pinName.Text = pin.Label;
 
