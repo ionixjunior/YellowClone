@@ -3,6 +3,8 @@ using System.Linq;
 
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps;
 //using Xamarin.Forms.Maps;
 using YellowClone.Controls;
 
@@ -34,37 +36,37 @@ namespace YellowClone.Views
         {
             if (GetElementByName<CustomMap>(MapElement) is CustomMap map)
             {
-                //map.MoveToRegion(
-                //    MapSpan.FromCenterAndRadius(
-                //        new Position(-23.561453, -46.656300),
-                //        Distance.FromMeters(200)
-                //    )
-                //);
+                map.MoveToRegion(
+                    MapSpan.FromCenterAndRadius(
+                        new Location(-23.561453, -46.656300),
+                        Distance.FromMeters(200)
+                    )
+                );
             }
         }
 
         private void AddPins()
         {
-            //if (GetElementByName<CustomMap>(MapElement) is CustomMap map)
-            //{
-            //    map.AddPin(new CustomPin
-            //    {
-            //        Identifier = 1,
-            //        Type = PinType.Generic,
-            //        Position = new Position(-23.559949, -46.656182),
-            //        Label = "Bike",
-            //        Information = "R$ 1,00 a cada 15 min"
-            //    });
+            if (GetElementByName<CustomMap>(MapElement) is CustomMap map)
+            {
+                map.AddPin(new CustomPin
+                {
+                    Identifier = 1,
+                    Type = PinType.Generic,
+                    Location = new Location(-23.559949, -46.656182),
+                    Label = "Bike",
+                    Information = "R$ 1,00 a cada 15 min"
+                });
 
-            //    map.AddPin(new CustomPin
-            //    {
-            //        Identifier = 2,
-            //        Type = PinType.Generic,
-            //        Position = new Position(-23.563066, -46.656933),
-            //        Label = "Bike",
-            //        Information = "R$ 1,30 a cada 15 min"
-            //    });
-            //}
+                map.AddPin(new CustomPin
+                {
+                    Identifier = 2,
+                    Type = PinType.Generic,
+                    Location = new Location(-23.563066, -46.656933),
+                    Label = "Bike",
+                    Information = "R$ 1,30 a cada 15 min"
+                });
+            }
         }
 
         private void SubscribeEvents()

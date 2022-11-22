@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Map = Microsoft.Maui.Controls.Maps.Map;
 using System;
+using Microsoft.Maui.Controls.Maps;
 
 namespace YellowClone.Controls
 {
@@ -18,7 +19,7 @@ namespace YellowClone.Controls
 
         public void AddPin(CustomPin pin)
         {
-            //Pins.Add(pin);
+            Pins.Add(pin);
             CustomPins.Add(pin);
         }
 
@@ -33,7 +34,7 @@ namespace YellowClone.Controls
         }
     }
 
-    public class CustomPin// : Pin
+    public class CustomPin : Pin
     {
         public int Identifier { get; set; }
         public string Information { get; set; }
