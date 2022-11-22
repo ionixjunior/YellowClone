@@ -49,23 +49,42 @@ namespace YellowClone.Views
         {
             if (GetElementByName<CustomMap>(MapElement) is CustomMap map)
             {
-                map.AddPin(new CustomPin
+                var pin1 = new CustomPin
                 {
                     Identifier = 1,
                     Type = PinType.Generic,
                     Location = new Location(-23.559949, -46.656182),
                     Label = "Bike",
                     Information = "R$ 1,00 a cada 15 min"
-                });
+                };
+                pin1.MarkerClicked += OnMarkerClicked;
+                map.AddPin(pin1);
 
-                map.AddPin(new CustomPin
+                var pin2 = new CustomPin
                 {
                     Identifier = 2,
                     Type = PinType.Generic,
                     Location = new Location(-23.563066, -46.656933),
                     Label = "Bike",
                     Information = "R$ 1,30 a cada 15 min"
-                });
+                };
+                pin2.MarkerClicked += OnMarkerClicked;
+                map.AddPin(pin2);
+            }
+        }
+
+        private void OnMarkerClicked(object sender, PinClickedEventArgs e)
+        {
+            if (sender is CustomPin pin)
+            {
+                if (GetElementByName<Label>(PinNameElement) is Label pinName)
+                    pinName.Text = pin.Label;
+
+                if (GetElementByName<Label>(PinDescriptionElement) is Label pinDescription)
+                    pinDescription.Text = pin.Information;
+
+                if (GetElementByName<Frame>(PinContentElement) is Frame pinContent)
+                    pinContent.IsVisible = true;
             }
         }
 

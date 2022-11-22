@@ -18,6 +18,20 @@
                 x:Name="map"
                 Grid.Row="0"
             />
+
+            <Frame
+                x:Name="pinContent"
+                IsVisible="false"
+                HasShadow="False"
+                CornerRadius="20"
+                WidthRequest="250"
+                Padding="0"
+                HeightRequest="100">
+                <VerticalStackLayout Margin="10" VerticalOptions="Center">
+                    <Label x:Name="pinName" Text="" FontSize="Large" />
+                    <Label x:Name="pinDescription" Text="" FontSize="Large" />
+                </VerticalStackLayout>
+            </Frame>
             
             <FlexLayout
                 Grid.Row="1"
