@@ -102,9 +102,16 @@ namespace YellowClone.Views
         {
             if (GetElementByName<CustomMap>(MapElement) is CustomMap map)
             {
-                map.PinSelected += OnPinSelected;
-                map.MapMoved += OnMapMoved;
+                //map.PinSelected += OnPinSelected;
+                //map.MapMoved += OnMapMoved;
+                map.MapClicked += OnMapClicked;
             }
+        }
+
+        private void OnMapClicked(object sender, MapClickedEventArgs e)
+        {
+            if (GetElementByName<Frame>(PinContentElement) is Frame pinContent)
+                pinContent.IsVisible = false;
         }
 
         private void OnPinSelected(object sender, CustomPin pin)
