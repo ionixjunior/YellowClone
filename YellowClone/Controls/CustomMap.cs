@@ -6,7 +6,7 @@ using Microsoft.Maui.Controls.Maps;
 
 namespace YellowClone.Controls
 {
-    public class CustomMap : Map
+    public partial class CustomMap : Map
     {
         public event EventHandler<CustomPin> PinSelected;
         public event EventHandler MapMoved;
@@ -16,6 +16,8 @@ namespace YellowClone.Controls
         {
             CustomPins = new List<CustomPin>();
         }
+
+        static partial void CreateCustomMap();
 
         public void AddPin(CustomPin pin)
         {
