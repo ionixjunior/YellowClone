@@ -15,6 +15,9 @@ namespace YellowClone
                 .ConfigureMauiHandlers(h =>
                 {
                     h.AddHandler<CustomMap, MapHandler>();
+#if ANDROID
+                    h.AddHandler<CustomPin, MapPinHandler>();
+#endif
                 });
             Controls.PlatformCustomMap.CreateCustomMap();
             return builder.Build();

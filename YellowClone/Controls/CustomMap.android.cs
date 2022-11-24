@@ -62,7 +62,7 @@ public class PlatformCustomMap : Android.Gms.Maps.MapView, GoogleMap.IInfoWindow
 	public Android.Views.View GetInfoWindow(Marker marker)
 	{
 		var customPin = GetCustomPin(marker);
-		if (customPin == null)
+		if (customPin is null)
 			return new Android.Views.View(Context);
 
 		map.SelectPin(customPin);
