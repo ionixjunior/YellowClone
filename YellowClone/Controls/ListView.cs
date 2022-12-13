@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Windows.Input;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace YellowClone.Controls
 {
-    public class ListView : Xamarin.Forms.ListView
+    public class ListView : Microsoft.Maui.Controls.ListView
     {
         public static readonly BindableProperty ItemTappedCommandProperty =
             BindableProperty.Create(

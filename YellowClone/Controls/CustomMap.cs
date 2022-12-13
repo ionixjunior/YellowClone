@@ -1,7 +1,8 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
-using Xamarin.Forms.Maps;
+using Map = Microsoft.Maui.Controls.Maps.Map;
 using System;
+using Microsoft.Maui.Controls.Maps;
 
 namespace YellowClone.Controls
 {

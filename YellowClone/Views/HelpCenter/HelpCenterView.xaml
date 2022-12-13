@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="YellowClone.Views.HelpCenter.HelpCenterView"
     Title="Help Center"
@@ -21,7 +21,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout
+            <VerticalStackLayout
                 Padding="40"
             >
                 <Label 
@@ -30,10 +30,7 @@
                     FontSize="Large"
                 />
                 
-                <FlexLayout
-                    Direction="Row"
-                    AlignItems="Center"
-                >
+                <HorizontalStackLayout>
                     <Image 
                         Source="help_center_route.png"
                     />
@@ -42,7 +39,7 @@
                         Text="SÃO PAULO"
                         Margin="10,0,0,0"
                     />
-                </FlexLayout>
+                </HorizontalStackLayout>
                 
                 <FlexLayout
                     Direction="Row"
@@ -50,7 +47,7 @@
                     VerticalOptions="StartAndExpand"
                 >
                     <Frame>
-                        <StackLayout
+                        <VerticalStackLayout
                             VerticalOptions="Center"
                             Spacing="0"
                         >
@@ -62,11 +59,11 @@
                                 Text="Wallet"
                                 HorizontalTextAlignment="Center"
                             />
-                        </StackLayout>
+                        </VerticalStackLayout>
                     </Frame>
                     
                     <Frame>
-                        <StackLayout
+                        <VerticalStackLayout
                             VerticalOptions="Center"
                             Spacing="0"
                         >
@@ -78,11 +75,11 @@
                                 Text="Scooter"
                                 HorizontalTextAlignment="Center"
                             />
-                        </StackLayout>
+                        </VerticalStackLayout>
                     </Frame>
                     
                     <Frame>
-                        <StackLayout
+                        <VerticalStackLayout
                             VerticalOptions="Center"
                             Spacing="0"
                         >
@@ -94,11 +91,11 @@
                                 Text="e-Bike"
                                 HorizontalTextAlignment="Center"
                             />
-                        </StackLayout>
+                        </VerticalStackLayout>
                     </Frame>
                     
                     <Frame>
-                        <StackLayout
+                        <VerticalStackLayout
                             VerticalOptions="Center"
                             Spacing="0"
                         >
@@ -110,15 +107,16 @@
                                 Text="Bike"
                                 HorizontalTextAlignment="Center"
                             />
-                        </StackLayout>
+                        </VerticalStackLayout>
                     </Frame>
                 </FlexLayout>
                 
                 <Button 
                     Style="{StaticResource WhiteButton}"
                     Text="REPORT ISSUE"
+                    Margin="0,20,0,0"
                 />
-            </StackLayout>
+            </VerticalStackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

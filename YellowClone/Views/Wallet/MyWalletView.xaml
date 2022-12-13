@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="YellowClone.Views.Wallet.MyWalletView"
     Title="My Wallet"
@@ -9,12 +9,13 @@
         <ResourceDictionary>
             <Style x:Key="FrameOptions" TargetType="Frame">
                 <Setter Property="Margin" Value="10" />
+                <Setter Property="HasShadow" Value="True" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout
+        <VerticalStackLayout
             Padding="25"
             Spacing="30"
         >
@@ -32,7 +33,7 @@
                     
                     <FlexLayout
                         Direction="Row"
-                        Padding="20"
+                        Margin="20"
                         AlignItems="Stretch"
                     >
                         <Label 
@@ -67,20 +68,16 @@
                 FontAttributes="Bold"
                 FontSize="Medium"
             />
-            
-            <ScrollView
-                Orientation="Horizontal"    
-            >
-                <FlexLayout
-                    Direction="Row"
-                >
+
+            <ScrollView Orientation="Horizontal">
+                <HorizontalStackLayout>
                     <Frame
                         Style="{StaticResource FrameOptions}"
                         Padding="0"
                         HeightRequest="{OnPlatform Android=120, iOS=140}"
                         WidthRequest="{OnPlatform Android=120, iOS=140}"
                     >
-                        <StackLayout
+                        <VerticalStackLayout
                             Spacing="0"
                             VerticalOptions="Center"
                         >
@@ -94,7 +91,7 @@
                                 HorizontalTextAlignment="Center"
                                 Margin="10,0"
                             />
-                        </StackLayout>
+                        </VerticalStackLayout>
                     </Frame>
                     
                     <Frame
@@ -103,7 +100,7 @@
                         HeightRequest="{OnPlatform Android=120, iOS=140}"
                         WidthRequest="{OnPlatform Android=120, iOS=140}"
                     >
-                        <StackLayout
+                        <VerticalStackLayout
                             Spacing="0"
                             VerticalOptions="Center"
                         >
@@ -117,7 +114,7 @@
                                 HorizontalTextAlignment="Center"
                                 Margin="10,0"
                             />
-                        </StackLayout>
+                        </VerticalStackLayout>
                     </Frame>
                     
                     <Frame
@@ -126,7 +123,7 @@
                         HeightRequest="{OnPlatform Android=120, iOS=140}"
                         WidthRequest="{OnPlatform Android=120, iOS=140}"
                     >
-                        <StackLayout
+                        <VerticalStackLayout
                             Spacing="0"
                             VerticalOptions="Center"
                         >
@@ -140,15 +137,12 @@
                                 HorizontalTextAlignment="Center"
                                 Margin="10,0"
                             />
-                        </StackLayout>
+                        </VerticalStackLayout>
                     </Frame>
-                </FlexLayout>
+                </HorizontalStackLayout>
             </ScrollView>
             
-            <FlexLayout
-                Direction="Row"
-                AlignItems="Center"
-            >
+            <HorizontalStackLayout>
                 <Image 
                     Source="wallet_history.png"
                 />
@@ -156,8 +150,9 @@
                 <Label 
                     Text="View Usage History"
                     Margin="10,0,0,0"
+                    VerticalTextAlignment="Center"
                 />
-            </FlexLayout>
-        </StackLayout>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Linq;
 
-using Xamarin.Forms;
-using Xamarin.Forms.Maps;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps;
+//using Xamarin.Forms.Maps;
 using YellowClone.Controls;
 
 namespace YellowClone.Views
@@ -14,11 +17,17 @@ namespace YellowClone.Views
         private const string PinDescriptionElement = "pinDescription";
         private const string PinContentElement = "pinContent";
 
-        private MasterDetailPage _masterDetail;
+        private FlyoutPage _masterDetail;
 
         public MapView()
         {
             InitializeComponent();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await Task.Delay(500);
             ConfigureMap();
         }
 
@@ -35,7 +44,7 @@ namespace YellowClone.Views
             {
                 map.MoveToRegion(
                     MapSpan.FromCenterAndRadius(
-                        new Position(-23.561453, -46.656300),
+                        new Location(-23.561453, -46.656300),
                         Distance.FromMeters(200)
                     )
                 );
@@ -46,23 +55,52 @@ namespace YellowClone.Views
         {
             if (GetElementByName<CustomMap>(MapElement) is CustomMap map)
             {
-                map.AddPin(new CustomPin
+                var pin1 = new CustomPin
                 {
                     Identifier = 1,
                     Type = PinType.Generic,
-                    Position = new Position(-23.559949, -46.656182),
+                    Location = new Location(-23.559949, -46.656182),
                     Label = "Bike",
                     Information = "R$ 1,00 a cada 15 min"
-                });
+                };
+                pin1.MarkerClicked += OnMarkerClicked;
+                map.AddPin(pin1);
 
-                map.AddPin(new CustomPin
+                var pin2 = new CustomPin
                 {
                     Identifier = 2,
                     Type = PinType.Generic,
-                    Position = new Position(-23.563066, -46.656933),
+                    Location = new Location(-23.563066, -46.656933),
                     Label = "Bike",
                     Information = "R$ 1,30 a cada 15 min"
-                });
+                };
+                pin2.MarkerClicked += OnMarkerClicked;
+                map.AddPin(pin2);
+            }
+        }
+
+        private void OnMarkerClicked(object sender, PinClickedEventArgs e)
+        {
+            if (sender is CustomPin pin)
+            {
+                if (GetElementByName<CustomMap>(MapElement) is CustomMap map)
+                {
+                    map.MoveToRegion(
+                        MapSpan.FromCenterAndRadius(
+                            pin.Location,
+                            Distance.FromMeters(200)
+                        )
+                    );
+                }
+
+                if (GetElementByName<Label>(PinNameElement) is Label pinName)
+                    pinName.Text = pin.Label;
+
+                if (GetElementByName<Label>(PinDescriptionElement) is Label pinDescription)
+                    pinDescription.Text = pin.Information;
+
+                if (GetElementByName<Frame>(PinContentElement) is Frame pinContent)
+                    pinContent.IsVisible = true;
             }
         }
 
@@ -70,15 +108,22 @@ namespace YellowClone.Views
         {
             if (GetElementByName<CustomMap>(MapElement) is CustomMap map)
             {
-                map.PinSelected += OnPinSelected;
-                map.MapMoved += OnMapMoved;
+                //map.PinSelected += OnPinSelected;
+                //map.MapMoved += OnMapMoved;
+                map.MapClicked += OnMapClicked;
             }
+        }
+
+        private void OnMapClicked(object sender, MapClickedEventArgs e)
+        {
+            if (GetElementByName<Frame>(PinContentElement) is Frame pinContent)
+                pinContent.IsVisible = false;
         }
 
         private void OnPinSelected(object sender, CustomPin pin)
         {
-            if (GetElementByName<Label>(PinNameElement) is Label pinName)
-                pinName.Text = pin.Label;
+            //if (GetElementByName<Label>(PinNameElement) is Label pinName)
+            //    pinName.Text = pin.Label;
 
             if (GetElementByName<Label>(PinDescriptionElement) is Label pinDescription)
                 pinDescription.Text = pin.Information;
@@ -104,7 +149,7 @@ namespace YellowClone.Views
             if (_masterDetail == null)
             {
                 var mainPage = Application.Current.MainPage as NavigationPage;
-                _masterDetail = mainPage.Navigation.NavigationStack.FirstOrDefault() as MasterDetailPage;
+                _masterDetail = mainPage.Navigation.NavigationStack.FirstOrDefault() as FlyoutPage;
             }
         }
 

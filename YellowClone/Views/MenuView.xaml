@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="YellowClone.Views.MenuView"
     x:Name="view"
@@ -8,6 +8,7 @@
     <ContentPage.Content>
         <Grid
             RowSpacing="0"
+            Padding="15"
         >
             <Grid.RowDefinitions>
                 <RowDefinition Height="{OnPlatform Android=130, iOS=200}" />
@@ -34,7 +35,7 @@
                     />
                 </Frame>
                 
-                <StackLayout
+                <VerticalStackLayout
                     Spacing="0"
                     Padding="10,0,0,0"
                 >
@@ -49,10 +50,10 @@
                         TextColor="Gray"
                         FontSize="Small"
                     />
-                </StackLayout>
+                </VerticalStackLayout>
             </FlexLayout>
             
-            <StackLayout
+            <VerticalStackLayout
                 Grid.Row="1"
                 BindableLayout.ItemsSource="{Binding Menus}"
             >
@@ -82,7 +83,7 @@
                         </FlexLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
-            </StackLayout>
+            </VerticalStackLayout>
             
             <Frame
                 Grid.Row="1"
