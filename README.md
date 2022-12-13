@@ -10,9 +10,7 @@ Parte I https://www.youtube.com/watch?v=x_sNPEwS3kA
 Parte II https://www.youtube.com/watch?v=k3oediCzZvs
 
 ##### Migração do app para MAUI
-Parte I https://www.youtube.com/watch?v=ocBaNnVD-3Q
-
-Parte II https://www.youtube.com/watch?v=ob2oDEVAeyQ
+Playlist com as lives da migração https://www.youtube.com/playlist?list=PLAbYWcQD84aM4SLG32GymHLzi_Xrh2S7d
 
 Alguns prints do app:
 
