@@ -14,12 +14,11 @@ namespace YellowClone
                 .UseMauiApp<App>()
                 .ConfigureMauiHandlers(h =>
                 {
-                    h.AddHandler<CustomMap, MapHandler>();
 #if ANDROID
-                    h.AddHandler<CustomPin, MapPinHandler>();
+                    h.AddHandler<CustomMap, Platforms.Android.CustomMapHandler>();
 #endif
                 });
-            Controls.PlatformCustomMap.CreateCustomMap();
+            //Controls.PlatformCustomMap.CreateCustomMap();
             return builder.Build();
         }
     }
