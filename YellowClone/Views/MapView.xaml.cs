@@ -22,6 +22,12 @@ namespace YellowClone.Views
         public MapView()
         {
             InitializeComponent();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await Task.Delay(500);
             ConfigureMap();
         }
 
