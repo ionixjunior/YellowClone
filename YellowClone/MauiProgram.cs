@@ -18,7 +18,10 @@ namespace YellowClone
                     h.AddHandler<CustomMap, Platforms.Android.CustomMapHandler>();
 #endif
                 });
-            //Controls.PlatformCustomMap.CreateCustomMap();
+
+#if IOS
+            Controls.PlatformCustomMap.CreateCustomMap();
+#endif
             return builder.Build();
         }
     }
