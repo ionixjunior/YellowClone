@@ -1,8 +1,6 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YellowClone.iOS", "YellowClone.iOS\YellowClone.iOS.csproj", "{8508C48E-229B-457E-91D2-BC8ACB6938E2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YellowClone", "YellowClone\YellowClone.csproj", "{A3E172D9-B978-4A23-98D2-3A058A05F02C}"
 EndProject
 Global
